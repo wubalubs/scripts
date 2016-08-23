@@ -1,0 +1,2 @@
+#!/bin/bash
+find /home/david/Downloads/* -mtime +5 -exec rm {} \;
