@@ -1,9 +1,10 @@
-#!/bin/bash
+	#!/bin/bash
 #find /home/david/Downloads/* -mtime +30 -exec rm {} \;
 #We can log this by piping the find command to a logfile first
 #add text alert as well w/ textbelt.com
 #
 
-date=date
-find /home/david/Downloads/* -type f || echo "$date - No deletions" >> /var/log/deletions
+LOG_DATE=$(date)
+
+find /home/david/Downloads/* -type f || echo "$LOG_DATE - No deletions" >> /var/log/deletions
 
