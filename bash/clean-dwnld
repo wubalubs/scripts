@@ -1,5 +1,0 @@
-#!/bin/bash
-find /home/david/Downloads/* -mtime +30 -exec rm {} \;
-#We can log this by piping the find command to a logfile first
-#add text alert as well w/ textbelt.com
-#
