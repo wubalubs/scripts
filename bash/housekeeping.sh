@@ -6,9 +6,12 @@ LOG_DATE=$(date)
 FILES="$(find /home/david/Downloads/* -mtime 20 -type f)"
 # to echo this use "${FILES}"
 
+# echo files to be deleted to logfile
+printf "\\n$LOG_DATE - Deleted Items \\n${FILES}" >> ~/.deletions.log
+
 
 # Finds files older than 20 days and deletes, reports "no deletions" if no match
-find /home/david/Downloads/* -mtime 20 -type f || echo "$LOG_DATE - No deletions" >> /var/log/deletions
+find /home/david/Downloads/* -mtime 20 -type f || printf "\\n$LOG_DATE - No deletions\\n" >> ~/.deletions.log
 
 
 
