@@ -3,7 +3,7 @@
 
 # Variables
 LOG_DATE=$(date)
-FILES="$(find /home/david/Downloads/* -mtime +10 -type f)"
+FILES="$(find ~/Downloads/* -mtime +10 -type f)"
 
 
 if [ -z "$FILES" ];
@@ -13,5 +13,5 @@ if [ -z "$FILES" ];
 
 	else
 	printf "\\n$LOG_DATE - Deleted Items \\n${FILES}\\n" >> ~/.deletions.log
-	find /home/david/Downloads/* -type f -mtime +10 -exec rm {} \;	
+	find ~/Downloads/* -type f -mtime +10 -exec rm {} \;	
 fi
